@@ -1,7 +1,9 @@
 Bootnode and miner
 ==================
 
-## Build and run
+## Running "server" (bootnode)
+
+### Build and run
 
 ```
 docker build -t bootnode .
@@ -12,7 +14,7 @@ This will run container `bootnode` and expose port `30303`. Make port `30303` av
 
 Note: Container will create account and start mining immediately.
 
-## Entering geth JS console
+### Entering geth JS console
 
 Execute `geth attach` in interactive mode:
 
@@ -27,7 +29,7 @@ Usefull commands:
 
 To unlock wallet use password from `src/pwd`
 
-## Getting bootnode address
+### Getting bootnode address
 
 * execute `get_node.sh`
 * replace `[::]` with server's public ip address
@@ -35,7 +37,11 @@ To unlock wallet use password from `src/pwd`
 
 As a result you will get something similar to `enode://b4237b154a99cc729f4731348de518410c83d0b798fa153308140e4b9a5098a5a9f116115d3fd8245038bab9f08dfd804f60724ad39af080eda9a2d4674dce6d@172.17.0.2:30303`
 
-## Connecting to the private blockchain
+### Backup/moving the container
+
+See docker [export](https://docs.docker.com/engine/reference/commandline/export/) and [import](https://docs.docker.com/engine/reference/commandline/import/) for more info.
+
+## Running client (connecting to the private blockchain)
 
 At the very first time initialize geth data directory by `geth --datadir="datadir" init genesis.json`
 
@@ -46,7 +52,3 @@ geth --datadir="datadir" --networkid 1511850993 --bootnodes enode://b4237b154a99
 ```
 
 Replace `enode://...` with correct enode address
-
-## Backup/moving the container
-
-See docker [export](https://docs.docker.com/engine/reference/commandline/export/) and [import](https://docs.docker.com/engine/reference/commandline/import/) for more info.
