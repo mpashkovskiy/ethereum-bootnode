@@ -10,9 +10,8 @@ RUN \
 COPY src /home
 WORKDIR /home
 
-RUN geth --datadir="datadir" init genesis.json
-RUN geth --datadir="datadir" --networkid 1511850993 --nodiscover account new --password pwd
-CMD geth --datadir="datadir" --networkid 1511850993 --nodiscover --mine --minerthreads=1 --etherbase=0
+RUN geth --datadir=datadir init genesis.json
+CMD ./start.sh
 
 EXPOSE 30303
 EXPOSE 30303/udp
