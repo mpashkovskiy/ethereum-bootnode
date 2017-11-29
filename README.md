@@ -43,12 +43,12 @@ See docker [export](https://docs.docker.com/engine/reference/commandline/export/
 
 ## Running client (connecting to the private blockchain)
 
-At the very first time initialize geth data directory by `geth --datadir="datadir" init genesis.json`
+At the very first time initialize geth data directory by `geth --datadir=datadir init genesis.json`
 
 Then run geth console with initialized datadir, network id and bootnode
 
 ```
-geth --datadir="datadir" --networkid 1511850993 --bootnodes enode://b4237b154a99cc729f4731348de518410c83d0b798fa153308140e4b9a5098a5a9f116115d3fd8245038bab9f08dfd804f60724ad39af080eda9a2d4674dce6d@172.17.0.2:30303 console
+geth --datadir=datadir --networkid 1511850993 --bootnodes enode://b4237b154a99cc729f4731348de518410c83d0b798fa153308140e4b9a5098a5a9f116115d3fd8245038bab9f08dfd804f60724ad39af080eda9a2d4674dce6d@172.17.0.2:30303 console
 ```
 
 Replace `enode://...` with correct enode address
